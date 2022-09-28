@@ -1,0 +1,98 @@
+package Datos;
+
+import java.util.Date;
+
+public class Profesor extends  Datos.Usuario {
+    
+    private Estudiante[] estudiantes;
+    private Grupo[] grupos;
+    private Carrera[] carreras;
+    private Edificio oficina;
+    private Curso[] cursos;
+
+    public Profesor(Estudiante[] estudiantes, Grupo[] grupos, Carrera[] carreras, Edificio oficina, Curso[] cursos, int id, String usuario, String nombre, String apellido, Date fecha_nacimiento, String correo) {
+        super(id, usuario, nombre, apellido, fecha_nacimiento, correo);
+        this.estudiantes = estudiantes;
+        this.grupos = grupos;
+        this.carreras = carreras;
+        this.oficina = oficina;
+        this.cursos = cursos;
+    }
+    
+
+    public Profesor(Estudiante[] estudiantes, Grupo[] grupos, Carrera[] carreras, Edificio oficina, Curso[] cursos, int id, String usuario, String nombre, String apellido) {
+        super(id, usuario, nombre, apellido);
+        this.estudiantes = estudiantes;
+        this.grupos = grupos;
+        this.carreras = carreras;
+        this.oficina = oficina;
+        this.cursos = cursos;
+    }
+
+    public Profesor(int id, String usuario, String nombre, String apellido) {
+        super(id, usuario, nombre, apellido);
+    }
+    
+    
+    
+
+    
+    
+    public Estudiante[] getEstudiantes() {
+        return estudiantes;
+    }
+
+    public void setEstudiantes(Estudiante[] estudiantes) {
+        this.estudiantes = estudiantes;
+    }
+
+    public Grupo[] getGrupos() {
+        return grupos;
+    }
+
+    public void setGrupos(Grupo[] grupos) {
+        this.grupos = grupos;
+    }
+
+    public Carrera[] getCarreras() {
+        return carreras;
+    }
+
+    public void setCarreras(Carrera[] carreras) {
+        this.carreras = carreras;
+    }
+
+    public Edificio getOficina() {
+        return oficina;
+    }
+
+    public void setOficina(Edificio oficina) {
+        this.oficina = oficina;
+    }
+
+    public Curso[] getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(Curso[] cursos) {
+        this.cursos = cursos;
+    }
+   
+    public void inscribir(){
+        System.out.println("No hay fechas de inscripciones para profesores");
+    };
+
+    @Override
+    public String toString() {
+        return super.toString() + "Estudiantes= " + estudiantes + "Grupos= " + grupos + "carrera=" + carreras + "oficina= " + oficina + "cursos=" + cursos ;
+    }
+
+   
+    
+    
+    
+    
+
+
+      
+}
