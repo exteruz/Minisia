@@ -1,0 +1,88 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package interfaz;
+import java.util.Scanner;
+import Datos.Estudiante;
+import Datos.Profesor;
+/**
+ *
+ * @author danie
+ */
+public class Funciones {
+     static Scanner lectura = new Scanner(System.in);
+    
+    
+    public static int inicio(){
+        System.out.println("Bienvenido al Sia");
+        System.out.println("Por favor seleccione su rol: \n seleccione el 0 si es:  Estudiante \n   seleccione el 1 si es:Profesor");
+        Scanner lectura = new Scanner(System.in);
+        int rol = lectura.nextInt();
+        
+        return rol;
+       
+    
+    }
+    
+    public static int crear_id (){
+        
+        int i = 0;
+        i++;
+        return i;
+    
+    }
+    
+    public static Estudiante registrar_estudiante(){
+        System.out.println("Por favor ingrese los siguientes datos");
+
+        System.out.println("Nombre");
+        String nombre = lectura.nextLine();
+        System.out.println("Apellido: ");
+        String apellido = lectura.nextLine();
+        String usuario = nombre.substring(0, 2) + apellido;
+        System.out.println("seleccione la carrera que esta cursando");
+        String Carrera = lectura.nextLine();
+        int id = crear_id();
+        
+        Estudiante estudiante = new Estudiante(id,nombre,apellido,usuario,Carrera);
+        return estudiante;
+    
+    }
+    
+     public Profesor  registrar_docente(){
+        System.out.println("Por favor ingrese los siguientes datos");
+        System.out.println("Nombre");
+        String nombre = "hola";
+        System.out.println("Apellido: ");
+        String apellido = lectura.nextLine();
+        String usuario = nombre.substring(0, 2) + apellido;
+        int id = crear_id();
+        
+        Profesor profesor = new Profesor(id,nombre,apellido,usuario);
+        return profesor;
+    
+    }
+    
+    
+    public static void menu_estudiante(){
+        System.out.println("Seleccione la accion que desea realizar");
+        System.out.println(" 1 Horario");
+        System.out.println(" 2 Datos personales ");
+        System.out.println("3 ver materias y calificaciones");
+        int seleccion  = lectura.nextInt();
+        
+
+    }
+    public static void profesor_estudiante(){
+        System.out.println("Seleccione la accion que desea realizar");
+        System.out.println(" 1 Horario");
+        System.out.println(" 2 Datos personales ");
+        System.out.println("3 ver materias y calificaciones");
+        int seleccion  = lectura.nextInt();
+        
+
+    }
+    
+}
