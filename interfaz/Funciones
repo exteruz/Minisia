@@ -15,16 +15,7 @@ public class Funciones {
      static Scanner lectura = new Scanner(System.in);
     
     
-    public static int inicio(){
-        System.out.println("Bienvenido al Sia");
-        System.out.println("Por favor seleccione su rol: \n seleccione el 0 si es:  Estudiante \n   seleccione el 1 si es:Profesor");
-        Scanner lectura = new Scanner(System.in);
-        int rol = lectura.nextInt();
-        
-        return rol;
-       
     
-    }
     
     public static int crear_id (){
         
@@ -46,12 +37,13 @@ public class Funciones {
         String Carrera = lectura.nextLine();
         int id = crear_id();
         
-        Estudiante estudiante = new Estudiante(id,nombre,apellido,usuario,Carrera);
+        Estudiante estudiante = new Estudiante(id,usuario,nombre,apellido
+                ,Carrera);
         return estudiante;
     
     }
     
-     public Profesor  registrar_docente(){
+     public static Profesor  registrar_docente(){
         System.out.println("Por favor ingrese los siguientes datos");
         System.out.println("Nombre");
         String nombre = "hola";
@@ -60,7 +52,7 @@ public class Funciones {
         String usuario = nombre.substring(0, 2) + apellido;
         int id = crear_id();
         
-        Profesor profesor = new Profesor(id,nombre,apellido,usuario);
+        Profesor profesor = new Profesor(id,usuario,nombre,apellido);
         return profesor;
     
     }
@@ -85,4 +77,22 @@ public class Funciones {
 
     }
     
+    public static boolean comprobar_usuario(String usuario, Estudiante[] lista_estudiantes){
+        
+        for (int i = 0; i < lista_estudiantes.length; i++) {
+            if (usuario == lista_estudiantes[i].getUsuario()){
+            return true;
+            }else{
+                return false;
+                }
+            
+        } 
+
+       return false;
+    }
+     
+    
+
+    
+   
 }
