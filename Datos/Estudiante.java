@@ -11,13 +11,16 @@ package Datos;
  */
 
 import java.util.Date;
+import java.util.*;   
 
 public class Estudiante extends Datos.Usuario {
-  
+    
     private String carrera;
     private Profesor[] profesores;
     private Nota[] notas;
     private Grupo[] grupos;
+    private List<Curso> cursos;
+    
 
     
 
@@ -73,6 +76,21 @@ public class Estudiante extends Datos.Usuario {
     public void setGrupos(Grupo[] grupos) {
         this.grupos = grupos;
     }
+
+
+
+    public List<Curso> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
+    }
+
+    
+    
+    
+    
     
     
      public void inscribir(){
