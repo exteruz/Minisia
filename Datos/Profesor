@@ -84,7 +84,7 @@ public class Profesor extends  Datos.Usuario {
 
     @Override
     public String toString() {
-        return super.toString() + "Estudiantes= " + estudiantes + "Grupos= " + grupos + "carrera=" + carreras + "oficina= " + oficina + "cursos=" + cursos ;
+        return super.toString();
     }
 
    
