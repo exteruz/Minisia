@@ -9,11 +9,15 @@ package Datos;
  *
  * @author Estudiante
  */
+import Datos.Profesor;
+
 public class Curso {
     private int id;
     private String nombre;
     private Grupo[] grupos;
     private Carrera[] carreras;
+    private String fecha;
+    private Profesor profesor;
 
     public Curso(int id, String nombre, Grupo[] grupos, Carrera[] carreras) {
         this.id = id;
@@ -22,10 +26,13 @@ public class Curso {
         this.carreras = carreras;
     }
 
-    public Curso(int id, String nombre) {
+    public Curso(int id, String nombre, String fecha, Profesor profesor) {
         this.id = id;
         this.nombre = nombre;
+        this.fecha = fecha;
+        this.profesor = profesor;
     }
+    
 
     public Curso(int id, String nombre, Carrera[] carreras) {
         this.id = id;
@@ -67,11 +74,16 @@ public class Curso {
         this.carreras = carreras;
     }
 
-    @Override
-    public String toString() {
-        return "Curso{" + "id=" + id + ", nombre=" + nombre + ", grupos=" + grupos + ", carreras=" + carreras + '}';
+    public Profesor getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
     
-    
-    
-}
+
+    @Override
+    public String toString() {
+        return "Curso{" + ", nombre=" + nombre + ","+ "hora=" + fecha+ '}'+"profesor="+profesor;
+    }
