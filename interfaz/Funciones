@@ -7,6 +7,9 @@ package interfaz;
 import java.util.Scanner;
 import Datos.Estudiante;
 import Datos.Profesor;
+import java.util.Arrays;
+import java.util.*; 
+import Datos.Curso;
 /**
  *
  * @author danie
@@ -42,6 +45,7 @@ public class Funciones {
         return estudiante;
     
     }
+ 
     
      public static Profesor  registrar_docente(){
         System.out.println("Por favor ingrese los siguientes datos");
@@ -58,41 +62,47 @@ public class Funciones {
     }
     
     
-    public static void menu_estudiante(){
+    public static int menu_estudiante(){
+        System.out.println("Seleccione la accion que desea realizar");
+        System.out.println(" 1 Inscribir materias");
+        System.out.println(" 2 Datos personales ");
+        System.out.println("3 ver materias y calificaciones");
+        System.out.println("4 salir");
+
+        int seleccion  = lectura.nextInt();
+        return seleccion;
+
+    }
+    public  int menu_profesor(){
         System.out.println("Seleccione la accion que desea realizar");
         System.out.println(" 1 Horario");
         System.out.println(" 2 Datos personales ");
-        System.out.println("3 ver materias y calificaciones");
+        System.out.println("3 ver materias");
+        System.out.println("4 salir");
         int seleccion  = lectura.nextInt();
-        
+        return seleccion;
 
     }
-    public static void profesor_estudiante(){
-        System.out.println("Seleccione la accion que desea realizar");
-        System.out.println(" 1 Horario");
-        System.out.println(" 2 Datos personales ");
-        System.out.println("3 ver materias y calificaciones");
-        int seleccion  = lectura.nextInt();
+    public static void inscribir_materias(Estudiante user, List<Curso>materias){
+        System.out.println("seleccione cual de las siguientes quiere inscribir: ");
+        for (int i = 0; i < materias.size(); i++) {
+            System.out.println(i +" "+materias.get(i));
+        }
+        List<Curso> materias_estudiante = new ArrayList<>();
+        System.out.println("cuantas materias desea inscribir?");
+        int cantidad_materias = lectura.nextInt();
+        for (int i = 0; i < cantidad_materias; i++) {
+            System.out.println("seleccione el numero de la materia que desea inscribir");
+              int seleccion  = lectura.nextInt();   
+              materias_estudiante.add(materias.get(seleccion)); 
         
-
-    }
-    
-    public static boolean comprobar_usuario(String usuario, Estudiante[] lista_estudiantes){
+        }
+        user.setCursos(materias_estudiante);
         
-        for (int i = 0; i < lista_estudiantes.length; i++) {
-            if (usuario == lista_estudiantes[i].getUsuario()){
-            return true;
-            }else{
-                return false;
-                }
-            
-        } 
+      
+}
 
-       return false;
-    }
-     
-    
 
-    
-   
+
+
 }
